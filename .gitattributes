@@ -1,0 +1,8 @@
+# Let Git handle line endings automatically
+* text=auto
+# Scripts that run on Linux (the GitHub build) keep Linux line endings
+mvnw text eol=lf
+*.sh text eol=lf
+# Windows scripts keep Windows line endings
+*.cmd text eol=crlf
+*.bat text eol=crlf
