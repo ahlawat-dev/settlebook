@@ -1,9 +1,51 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0">
-<modelVersion>4.0.0</modelVersion>
-<parent>
-<groupId>com.settlebook</groupId>
-<artifactId>settlebook</artifactId>
-<version>0.1.0-SNAPSHOT</version>
-</parent>
-<artifactId>payout-api</artifactId>
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.settlebook</groupId>
+        <artifactId>settlebook</artifactId>
+        <version>0.1.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>payout-api</artifactId>
+    <dependencies>
+        <!-- ledger-core holds the migration files -->
+        <dependency>
+            <groupId>com.settlebook</groupId>
+            <artifactId>ledger-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+        </dependency>
+        <!-- Since Flyway 10, PostgreSQL support is a separate library -->
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-database-postgresql</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-flyway</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
