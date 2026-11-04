@@ -8,6 +8,6 @@ class SmokeTest {
 
     @Test
     void theBuildRunsTests() {
-        assertThat(1 + 1).isEqualTo(2);
+        assertThat(1 + 1).isEqualTo(3);
     }
 }
