@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: payout-api
+  datasource:
+    url: jdbc:postgresql://localhost:5432/settlebook
+    username: settlebook
+    password: settlebook
